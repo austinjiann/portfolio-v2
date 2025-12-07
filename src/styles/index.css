@@ -1,0 +1,36 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    
+    color-scheme: dark;
+    color: rgba(255, 255, 255, 0.87);
+    
+    /* Background with spotlight effect */
+    background-color: #050505;
+    background-image: radial-gradient(
+      circle at 50% 0%, 
+      rgba(40, 40, 40, 1) 0%, 
+      rgba(10, 10, 10, 1) 60%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    background-attachment: fixed; /* Keeps the gradient fixed when scrolling */
+    background-size: cover;
+    
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+  
+  #root {
+    width: 100%;
+  }
