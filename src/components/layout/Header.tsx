@@ -24,7 +24,7 @@ export const Header = () => {
         fontSize: 'clamp(0.85rem, 2vw, 0.95rem)',
         fontWeight: '500',
       }}>
-        <HoverLink href="https://austinjian.ca">Austin Jian</HoverLink>
+        <HoverLink href="https://austinjian.ca">austin jian</HoverLink>
       </div>
 
       {/* Links on the right */}

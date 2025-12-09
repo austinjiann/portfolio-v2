@@ -50,6 +50,7 @@ export const ProjectCard = ({ title, description, href, children }: ProjectCardP
 
       {/* Front Layer (Main Card) */}
       <a 
+        className="project-card"
         href={href}
         target="_blank"
         rel="noopener noreferrer"

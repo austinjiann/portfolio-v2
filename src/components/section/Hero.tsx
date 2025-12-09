@@ -1,6 +1,12 @@
 import { HoverLink } from '../ui/HoverLink';
 
 export const Hero = () => {
+  const handleScrollClick = () => {
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
   return (
     <section style={{
       display: 'flex',
@@ -195,7 +201,7 @@ export const Hero = () => {
             alignItems: 'center',
             gap: '8px',
             zIndex: 100,
-            pointerEvents: 'none',
+            pointerEvents: 'auto',
             color: 'rgba(255,255,255,0.3)' 
           }}>
             <span style={{
@@ -203,20 +209,31 @@ export const Hero = () => {
               fontSize: '0.8rem',
               letterSpacing: '0.05em'
             }}>scroll to see more</span>
-            <svg 
-              width="24" 
-              height="24" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-              style={{ animation: 'bounce 3s infinite' }}
-            >
-              {/* Single arrow/chevron */}
-              <path d="M7 10l5 5 5-5"/>
-            </svg>
+              <div 
+                onClick={handleScrollClick}
+                style={{ 
+                  color: 'inherit', 
+                  textDecoration: 'none', 
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                <svg 
+                  width="24" 
+                  height="24" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                  style={{ animation: 'bounce 3s infinite' }}
+                >
+                  <path d="M7 10l5 5 5-5"/>
+                </svg>
+              </div>
           </div>
         </div>
       </div>
