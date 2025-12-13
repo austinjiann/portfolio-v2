@@ -35,10 +35,12 @@ export const Hero = () => {
       <div style={{ 
         position: 'relative', 
         width: '90%', 
-        maxWidth: '1000px', 
+        maxWidth: '800px', 
         display: 'flex', 
         justifyContent: 'center',
-      }}>
+        // Shared padding variable for consistency
+        '--card-padding': 'clamp(24px, 5vw, 32px)',
+      } as React.CSSProperties}>
 
         {/* Back Layer 1 */}
         <div style={{
@@ -108,7 +110,7 @@ export const Hero = () => {
             borderBottom: '1px solid rgba(255,255,255,0.1)',
             display: 'flex',
             alignItems: 'center',
-            padding: '0 2vw',
+            padding: '0 var(--card-padding)',
             gap: '10px',
             position: 'relative',
             boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2)'
@@ -136,7 +138,7 @@ export const Hero = () => {
 
           {/* Window Content */}
           <div style={{
-            padding: '8vh 5vw 15vh 5vw',
+            padding: '8vh var(--card-padding) 15vh var(--card-padding)',
             background: 'radial-gradient(circle at 50% 0%, rgba(255,255,255,0.05) 0%, transparent 60%)',
             position: 'relative',
             height: '100%',
@@ -148,7 +150,7 @@ export const Hero = () => {
           }}>
             {/* Top-left heading */}
             <h1 style={{
-              fontSize: 'clamp(3.5rem, 7vw, 6.5rem)', 
+              fontSize: 'clamp(3rem, 6.5vw, 5.5rem)', 
               fontWeight: '600',
               margin: 0,
               lineHeight: '1',
@@ -175,7 +177,7 @@ export const Hero = () => {
 
             {/* Bottom-right secondary text - Left aligned now */}
             <div style={{
-              fontSize: 'clamp(1.2rem, 2.5vw, 1.5rem)',
+              fontSize: 'clamp(1rem, 2vw, 1.25rem)',
               color: '#999',
               lineHeight: '1.6',
               textAlign: 'left', 

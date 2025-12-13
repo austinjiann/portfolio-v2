@@ -10,7 +10,7 @@ const ProjectImage = ({ src, alt, glowColor }: { src: string; alt: string; glowC
     className="project-image"
     style={{
       width: '100%',
-      marginBottom: '-40px',
+      marginBottom: 'calc(-1 * var(--card-padding))',
       borderTopLeftRadius: '12px',
       borderTopRightRadius: '12px',
       borderBottomLeftRadius: '0',
@@ -32,7 +32,11 @@ const ProjectImage = ({ src, alt, glowColor }: { src: string; alt: string; glowC
 const PROJECTS = [
   {
     title: "FlowBoard",
-    description: "Turn sketches and annotations into videos by drawing on a canvas - 1000+ users & 100+ stars",
+    description: (
+      <>
+        Turn sketches and annotations into videos by drawing on a canvas <br /> 1000+ users, 100+ stars, & 100k+ views
+      </>
+    ),
     href: "#",
     image: flowboardImg, 
     color: "#FF5F56",
@@ -42,7 +46,7 @@ const PROJECTS = [
     title: "PlayCreate",
     description: (
       <>
-        Traditional coaching boards reinvented with AI & animations. Over 10 million <br /> views on socials, winners @ <HoverLink href="https://unfounders.com">Unfounders</HoverLink>, flown out to pitch at SF tech week 2025
+        Traditional coaching boards reinvented with AI & animations.<br /> Over 10 million views on socials, winners @ <HoverLink href="https://unfounders.com">Unfounders</HoverLink>, flown out to pitch at SF tech week 2025
       </>
     ),
     href: "#",
@@ -54,7 +58,7 @@ const PROJECTS = [
     title: "Plant Hopper",
     description: (
       <>
-        Automatic plant-watering turret that auto aims and waters plants based on soil moisture. 1st place @ <HoverLink href="https://hackthevalley.io">Hack the Valley</HoverLink>
+        Automatic plant-watering turret that auto aims and waters plants based on soil moisture <br /> 1st place @ <HoverLink href="https://hackthevalley.io">Hack the Valley</HoverLink>
       </>
     ),
     href: "#",
@@ -73,7 +77,7 @@ export const Projects = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: '80px',
+        gap: 'clamp(40px, 8vh, 60px)',
         width: '100%'
     }}>
       <style>

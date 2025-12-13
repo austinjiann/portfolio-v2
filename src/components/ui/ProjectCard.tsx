@@ -14,9 +14,10 @@ export const ProjectCard = ({ title, description, href, children }: ProjectCardP
     <div style={{
       position: 'relative',
       width: '90%', 
-      maxWidth: '1000px', 
+      maxWidth: '800px', 
       margin: '0 auto',
-    }}>
+      '--card-padding': 'clamp(24px, 5vw, 32px)',
+    } as React.CSSProperties}>
       
       {/* Back Layer (Glassy Sheet Behind) */}
       <div style={{
@@ -79,7 +80,7 @@ export const ProjectCard = ({ title, description, href, children }: ProjectCardP
 
         {/* Card Header */}
         <div style={{
-          padding: '40px 40px 20px 40px',
+          padding: 'var(--card-padding) var(--card-padding) calc(var(--card-padding) / 2) var(--card-padding)',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'flex-start',
@@ -110,7 +111,7 @@ export const ProjectCard = ({ title, description, href, children }: ProjectCardP
         {/* Content Area */}
         <div style={{
           width: '100%',
-          padding: '0 40px 40px 40px',
+          padding: '0 var(--card-padding) var(--card-padding) var(--card-padding)',
           boxSizing: 'border-box'
         }}>
             <a href={href} target="_blank" rel="noopener noreferrer" style={{ display: 'block' }}>
