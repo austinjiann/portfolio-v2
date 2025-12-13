@@ -1,17 +1,14 @@
-import { Hero } from './components/section/Hero'
-import { Projects } from './components/section/Projects'
-import { Header } from './components/layout/Header'
-import { WebringBadge } from './components/ui/WebringBadge'
+import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { CaseStudy } from './pages/CaseStudy';
 
-function App() {
-  return (
-    <>
-      <Header />
-      <Hero />
-      <Projects />
-      <WebringBadge siteUrl="austinjian.ca" />
-    </>
-  )
-}
-
-export default App
+export const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+  },
+  {
+    path: '/projects/:slug',
+    element: <CaseStudy />,
+  },
+]);

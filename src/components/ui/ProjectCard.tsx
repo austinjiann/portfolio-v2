@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import {Link} from 'react-router-dom';
 
 interface ProjectCardProps {
   title: string;
@@ -9,6 +10,7 @@ interface ProjectCardProps {
 
 export const ProjectCard = ({ title, description, href, children }: ProjectCardProps) => {
   const offset = 'clamp(10px, 2.5vw, 16px)';
+  const isInternalLink = href?.startsWith('/');
   
   return (
     <div style={{
@@ -93,9 +95,15 @@ export const ProjectCard = ({ title, description, href, children }: ProjectCardP
               fontWeight: '600',
               letterSpacing: '-0.02em'
             }}>
-              <a href={href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
-                {title}
-              </a>
+              {isInternalLink ? (
+                <Link to={href!} style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
+                  {title}
+                </Link>
+              ) : (
+                <a href={href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
+                  {title}
+                </a>
+              )}
             </h3>
             <div style={{
               margin: 0,
@@ -114,9 +122,15 @@ export const ProjectCard = ({ title, description, href, children }: ProjectCardP
           padding: '0 var(--card-padding) var(--card-padding) var(--card-padding)',
           boxSizing: 'border-box'
         }}>
-            <a href={href} target="_blank" rel="noopener noreferrer" style={{ display: 'block' }}>
-              {children}
-            </a>
+            {isInternalLink ? (
+              <Link to={href!} style={{ display: 'block', cursor: 'pointer' }}>
+                {children}
+              </Link>
+            ) : (
+              <a href={href} target="_blank" rel="noopener noreferrer" style={{ display: 'block', cursor: 'pointer' }}>
+                {children}
+              </a>
+            )}
         </div>
       </div>
     </div>
