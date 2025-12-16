@@ -55,8 +55,9 @@ export const ProjectCard = ({ title, description, href, children }: ProjectCardP
             to { opacity: 1; transform: translateY(0); }
           }
           .project-card:hover + .outer-card-layer {
-             box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+             box-shadow: none;
              background: rgba(255,255,255,0.08);
+             border: 1px solid rgba(255,255,255,0.2);
           }
         `}
       </style>
@@ -69,7 +70,7 @@ export const ProjectCard = ({ title, description, href, children }: ProjectCardP
           position: 'relative',
           zIndex: 10,
           width: '100%',
-          minHeight: '55vh', // Matched height
+          minHeight: '20vh', 
           background: 'linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%)',
           borderRadius: '16px', 
           boxShadow: '0 20px 40px -10px rgba(0,0,0,0.5)',
@@ -155,22 +156,22 @@ export const ProjectCard = ({ title, description, href, children }: ProjectCardP
         width: `calc(100% + (2 * ${offset}))`,
         height: `calc(100% + (2 * ${offset}))`,
         background: 'rgba(255,255,255,0.06)', 
-        borderRadius: '24px',
+        borderRadius: '32px',
         zIndex: 1,
         backdropFilter: 'blur(5px)',
-        borderTopLeftRadius: '24px',
-        borderTopRightRadius: '24px',
-        borderBottomLeftRadius: '24px',
-        borderBottomRightRadius: '24px',
+        borderTopLeftRadius: '32px',
+        borderTopRightRadius: '32px',
+        borderBottomLeftRadius: '32px',
+        borderBottomRightRadius: '32px',
         transition: 'box-shadow 0.3s ease, background 0.3s ease',
       }}>
          {/* Inner border for the back layer */}
          <div style={{
             position: 'absolute',
             inset: 0,
-            borderRadius: '24px',
+            borderRadius: '32px',
             padding: '1px',
-            background: 'linear-gradient(to bottom, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%)',
+            background: 'rgba(255, 255, 255, 0.1)',
             WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
             WebkitMaskComposite: 'xor',
             maskComposite: 'exclude',

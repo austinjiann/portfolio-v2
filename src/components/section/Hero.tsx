@@ -14,7 +14,10 @@ export const Hero = () => {
           setIsVisible(false);
         }
       },
-      { threshold: 0.1 }
+      { 
+        threshold: 0,
+        rootMargin: '80% 0px 0px 0px' 
+      }
     );
 
     if (heroRef.current) {
@@ -75,8 +78,9 @@ export const Hero = () => {
         display: 'flex', 
         justifyContent: 'center',
         '--card-padding': 'clamp(24px, 5vw, 32px)',
-        opacity: 0, 
-        animation: isVisible ? 'fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards' : 'none',
+        opacity: isVisible ? 1 : 0, 
+        transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
+        transition: 'opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)',
       } as React.CSSProperties}>
 
         {/* Back Layer 1 */}
@@ -87,8 +91,8 @@ export const Hero = () => {
           left: '-16px',
           bottom: 0, 
           background: 'rgba(255,255,255,0.06)',
-          borderTopLeftRadius: '24px',
-          borderTopRightRadius: '24px',
+          borderTopLeftRadius: '32px',
+          borderTopRightRadius: '32px',
           zIndex: 1,
           backdropFilter: 'blur(5px)',
           WebkitMaskImage: 'linear-gradient(to bottom, black 40%, transparent 95%)',
@@ -97,8 +101,8 @@ export const Hero = () => {
           <div style={{
             position: 'absolute',
             inset: 0,
-            borderTopLeftRadius: '24px',
-            borderTopRightRadius: '24px',
+            borderTopLeftRadius: '32px',
+            borderTopRightRadius: '32px',
             padding: '1px',
             background: 'linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 80%)', 
             WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
@@ -114,8 +118,8 @@ export const Hero = () => {
           zIndex: 10,
           width: '100%',
           background: 'linear-gradient(180deg, #2a2a2a 0%, #111 100%)',
-          borderTopLeftRadius: '16px',
-          borderTopRightRadius: '16px',
+          borderTopLeftRadius: '24px',
+          borderTopRightRadius: '24px',
           boxShadow: '0 50px 100px -20px rgba(0,0,0,0.9)',
           overflow: 'hidden',
           minHeight: '60vh', 
@@ -126,8 +130,8 @@ export const Hero = () => {
           <div style={{
             position: 'absolute',
             inset: 0,
-            borderTopLeftRadius: '16px',
-            borderTopRightRadius: '16px',
+            borderTopLeftRadius: '24px',
+            borderTopRightRadius: '24px',
             padding: '1px',
             background: 'linear-gradient(to bottom, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 90%)', 
             WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',

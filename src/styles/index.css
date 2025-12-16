@@ -12,10 +12,10 @@
     /* Background with spotlight effect */
     background-color: #050505;
     background-image: radial-gradient(
-      circle at 50% 0%, 
-      rgba(40, 40, 40, 1) 0%, 
-      rgba(10, 10, 10, 1) 60%,
-      rgba(0, 0, 0, 1) 100%
+      ellipse at 50% -20%, 
+      rgba(60, 60, 60, 1) 0%, 
+      rgba(25, 25, 25, 1) 50%,
+      rgba(15, 15, 15, 1) 100%
     );
     background-attachment: fixed; 
     background-size: cover;

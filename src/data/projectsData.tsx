@@ -19,8 +19,7 @@ export const projects: Project[] = [
     title: 'FlowBoard',
     description: (
       <>
-        Turn sketches and annotations into videos by drawing on a canvas <br />
-        1000+ users, 100+ stars, & 100k+ views
+        Turn sketches and annotations into videos by drawing on a canvas. 1000+ users, 100+ stars, & 100k+ views
       </>
     ),
     image: flowboardImg,
@@ -46,7 +45,7 @@ export const projects: Project[] = [
     title: 'Plant Hopper',
     description: (
       <>
-        Automatic plant-watering turret that auto aims and waters plants based on soil moisture <br />
+        Automatic plant-watering turret that auto aims and waters plants based on soil moisture. 
         1st place @ <HoverLink href="https://hackthevalley.io">Hack the Valley</HoverLink>
       </>
     ),
