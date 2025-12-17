@@ -10,7 +10,7 @@ export const caseStudyComponentBySlug: Record<string, any> = {
 
 export const caseStudyTitleBySlug: Record<string, string> = {
   flowboard: 'FlowBoard — My First Viral Open Source Project',
-  playcreate: 'PlayCreate — Case Study',
+  playcreate: 'PlayCreate — This Got Us Flown Out to SF',
   'plant-hopper': 'Plant Hopper — Case Study',
 };
 
@@ -47,6 +47,14 @@ export const caseStudyMetadataBySlug: Record<string, {
       { name: 'Muhammad Mamdani', link: 'https://www.linkedin.com/in/muhammadalimamdani' },
     ],
     techStack: 'React, TypeScript, TailWind CSS, Next.js, Node.js, PostgreSQL',
+    projectLink: 'https://tryplaycreate.com',
+    tableOfContents: [
+      { label: 'Overview', id: 'overview' },
+      { label: 'The Mission', id: 'the-mission' },
+      { label: 'How It Works', id: 'how-it-works-technically' },
+      { label: 'Virality', id: 'virality' },
+      { label: 'Results', id: 'results' },
+    ],
   },
   'plant-hopper': {
     timeline: 'TBD',
