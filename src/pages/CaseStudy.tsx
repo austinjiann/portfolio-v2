@@ -1,9 +1,12 @@
 import { useParams, Link } from 'react-router-dom';
 import { projects } from '../data/projectsData';
+import { caseStudyComponentBySlug, caseStudyTitleBySlug } from '../data/caseStudies';
 
 export const CaseStudy = () => {
   const { slug } = useParams();
   const project = projects.find(p => p.slug === slug);
+  const caseStudyTitle = slug ? caseStudyTitleBySlug[slug] : undefined;
+  const CaseStudyComponent = slug ? caseStudyComponentBySlug[slug] : null;
 
   if (!project) {
     return (
@@ -15,11 +18,11 @@ export const CaseStudy = () => {
   }
 
   return (
-    <main style={{ padding: 'clamp(24px,4vw,48px)', width: '90%', maxWidth: '900px', margin: '0 auto' }}>
+    <main style={{ padding: 'clamp(24px,4vw,48px)', width: '90%', maxWidth: '750px', margin: '0 auto' }}>
       <Link to="/" style={{ color: '#888', textDecoration: 'none', cursor: 'pointer' }}>
-        ← Back to projects
+        ← back to projects
       </Link>
-      <h1 style={{ margin: '24px 0 12px' }}>{project.title}</h1>
+      <h1 style={{ margin: '24px 0 12px' }}>{caseStudyTitle ?? project.title}</h1>
       {project.image && (
         <img
           src={project.image}
@@ -28,8 +31,7 @@ export const CaseStudy = () => {
         />
       )}
       <div style={{ color: '#aaa', lineHeight: 1.6 }}>
-        {/* Render richer case study content here */}
-        {project.description}
+        {CaseStudyComponent ? <CaseStudyComponent /> : <p>Case study coming soon.</p>}
       </div>
     </main>
   );

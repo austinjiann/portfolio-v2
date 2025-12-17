@@ -39,12 +39,12 @@ export const Hero = () => {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center', 
-      height: '92vh',
+      minHeight: '100vh',
       width: '100%',
       position: 'relative',
       overflow: 'hidden',
-      paddingBottom: 0,
-      paddingTop: '15vh', 
+      paddingBottom: '10vh',
+      paddingTop: '10vh', 
     }}>
       {/* Styles for animations */}
       <style>
@@ -74,10 +74,10 @@ export const Hero = () => {
         style={{ 
         position: 'relative', 
         width: '90%', 
-        maxWidth: '900px',
+        maxWidth: '750px',
         display: 'flex', 
         justifyContent: 'center',
-        '--card-padding': 'clamp(24px, 5vw, 32px)',
+        '--card-padding': 'clamp(16px, 3vw, 20px)',
         opacity: isVisible ? 1 : 0, 
         transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
         transition: 'opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)',
@@ -122,7 +122,7 @@ export const Hero = () => {
           borderTopRightRadius: '24px',
           boxShadow: '0 50px 100px -20px rgba(0,0,0,0.9)',
           overflow: 'hidden',
-          minHeight: '60vh', 
+          minHeight: '65vh', 
           WebkitMaskImage: 'linear-gradient(to bottom, black 95%, transparent 100%)',
           maskImage: 'linear-gradient(to bottom, black 95%, transparent 100%)'
         }}>
@@ -191,7 +191,7 @@ export const Hero = () => {
           }}>
             {/* Top-left heading */}
             <h1 style={{
-              fontSize: 'clamp(3.5rem, 8vw, 6rem)', 
+              fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', 
               fontWeight: '600',
               margin: 0,
               lineHeight: '1',
@@ -213,12 +213,12 @@ export const Hero = () => {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.4))'
-              }}>flashy</span>
+              }}>eye catchy</span>
             </h1>
 
-            {/* Bottom-right secondary text - Left aligned now */}
+            {/* Bottom-right secondary text - Right aligned again */}
             <div style={{
-              fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)', 
+              fontSize: 'clamp(1rem, 2vw, 1.25rem)', 
               color: '#999',
               lineHeight: '1.6',
               textAlign: 'left', 

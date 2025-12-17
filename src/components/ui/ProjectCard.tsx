@@ -9,7 +9,7 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard = ({ title, description, href, children }: ProjectCardProps) => {
-  const offset = 'clamp(10px, 2.5vw, 16px)';
+  const offset = 'clamp(8px, 2vw, 12px)';
   const isInternalLink = href?.startsWith('/');
   
   const [isVisible, setIsVisible] = useState(false);
@@ -41,9 +41,9 @@ export const ProjectCard = ({ title, description, href, children }: ProjectCardP
       style={{
         position: 'relative',
         width: '90%', 
-        maxWidth: '900px', 
+        maxWidth: '750px', 
         margin: '0 auto',
-        '--card-padding': 'clamp(24px, 5vw, 32px)',
+        '--card-padding': 'clamp(16px, 3vw, 20px)',
         opacity: 0,
         animation: isVisible ? 'fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards' : 'none', 
       } as React.CSSProperties}
@@ -66,13 +66,14 @@ export const ProjectCard = ({ title, description, href, children }: ProjectCardP
       <div 
         className="project-card"
         style={{
-          display: 'block',
+          display: 'flex',
+          flexDirection: 'column',
           position: 'relative',
           zIndex: 10,
           width: '100%',
-          minHeight: '20vh', 
+          minHeight: '60vh', 
           background: 'linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%)',
-          borderRadius: '16px', 
+          borderRadius: '24px', 
           boxShadow: '0 20px 40px -10px rgba(0,0,0,0.5)',
           overflow: 'hidden',
           border: '1px solid rgba(255,255,255,0.08)',
@@ -83,7 +84,7 @@ export const ProjectCard = ({ title, description, href, children }: ProjectCardP
         <div style={{
           position: 'absolute',
           inset: 0,
-          borderRadius: '16px',
+          borderRadius: '24px',
           padding: '1px',
           background: 'linear-gradient(to bottom, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%)',
           WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
@@ -102,8 +103,8 @@ export const ProjectCard = ({ title, description, href, children }: ProjectCardP
         }}>
           <div>
             <h3 style={{
-              margin: '0 0 8px 0',
-              fontSize: '1.5rem',
+              margin: '0 0 6px 0',
+              fontSize: '1.25rem',
               fontWeight: '600',
               letterSpacing: '-0.02em'
             }}>
@@ -119,9 +120,9 @@ export const ProjectCard = ({ title, description, href, children }: ProjectCardP
             </h3>
             <div style={{
               margin: 0,
-              fontSize: '0.95rem',
+              fontSize: '0.85rem',
               color: '#888',
-              lineHeight: '1.5'
+              lineHeight: '1.4'
             }}>
               {description}
             </div>
@@ -132,7 +133,8 @@ export const ProjectCard = ({ title, description, href, children }: ProjectCardP
         <div style={{
           width: '100%',
           padding: '0 var(--card-padding) var(--card-padding) var(--card-padding)',
-          boxSizing: 'border-box'
+          boxSizing: 'border-box',
+          marginTop: 'auto'
         }}>
             {isInternalLink ? (
               <Link to={href!} style={{ display: 'block', cursor: 'pointer' }}>

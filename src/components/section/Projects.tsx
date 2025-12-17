@@ -6,19 +6,22 @@ const ProjectImage = ({ src, alt, glowColor }: { src: string; alt: string; glowC
   <div
     className="project-image"
     style={{
-      width: '100%',
+      width: '90%',
+      margin: '0 auto',
+      maxHeight: '550px',
       marginBottom: 'calc(-1 * var(--card-padding))',
-      borderTopLeftRadius: '12px',
-      borderTopRightRadius: '12px',
+      borderTopLeftRadius: '24px',
+      borderTopRightRadius: '24px',
       borderBottomLeftRadius: '0',
       borderBottomRightRadius: '0',
       overflow: 'hidden',
       borderTop: '1px solid rgba(255,255,255,0.1)',
       transition: 'box-shadow 0.3s ease',
       '--glow-color': glowColor || 'rgba(0, 60, 220, 0.6)',
+      lineHeight: 0,
     } as React.CSSProperties}
   >
-    <img src={src} alt={alt} style={{ width: '100%', height: 'auto', display: 'block' }} />
+    <img src={src} alt={alt} style={{ width: '100%', height: 'auto', maxHeight: '550px', display: 'block', objectFit: 'contain' }} />
   </div>
 );
 
@@ -31,7 +34,7 @@ export const Projects = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: 'clamp(40px, 8vh, 60px)',
+        gap: 'clamp(30px, 6vh, 45px)',
         width: '100%'
     }}>
       <style>
