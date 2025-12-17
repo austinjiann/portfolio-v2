@@ -20,6 +20,7 @@ export const caseStudyMetadataBySlug: Record<string, {
   techStack: string;
   githubLink?: string;
   projectLink?: string;
+  tableOfContents?: Array<{ label: string; id: string }>;
 }> = {
   flowboard: {
     timeline: 'November 2025',
@@ -31,6 +32,12 @@ export const caseStudyMetadataBySlug: Record<string, {
     techStack: 'typescript, react, vite, python, google cloud platform, redis, indexeddb, gemini, tldraw, tailwind css',
     githubLink: 'https://github.com/austinjiann/FlowBoard',
     projectLink: 'https://flowboard.tech',
+    tableOfContents: [
+      { label: 'Overview', id: 'a-brief-overview' },
+      { label: 'Inspiration', id: 'inspiration' },
+      { label: 'How It Works', id: 'how-it-works-technically' },
+      { label: 'Results', id: 'results' },
+    ],
   },
   playcreate: {
     timeline: 'TBD',

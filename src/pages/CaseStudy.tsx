@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { projects } from '../data/projectsData';
 import { caseStudyComponentBySlug, caseStudyTitleBySlug, caseStudyMetadataBySlug } from '../data/caseStudies';
 import { HoverLink } from '../components/ui/HoverLink';
+import { TableOfContents } from '../components/ui/TableOfContents';
 
 export const CaseStudy = () => {
   const { slug } = useParams();
@@ -20,7 +21,11 @@ export const CaseStudy = () => {
   }
 
   return (
-    <main style={{ padding: 'clamp(24px,4vw,48px)', width: '90%', maxWidth: '750px', margin: '0 auto' }}>
+    <>
+      {metadata?.tableOfContents && (
+        <TableOfContents items={metadata.tableOfContents} />
+      )}
+      <main style={{ padding: 'clamp(24px,4vw,48px)', width: '90%', maxWidth: '750px', margin: '0 auto' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <Link to="/" style={{ color: '#888', textDecoration: 'none', cursor: 'pointer' }}>
           ← back to projects
@@ -72,5 +77,6 @@ export const CaseStudy = () => {
         {CaseStudyComponent ? <CaseStudyComponent /> : <p>Case study coming soon.</p>}
       </div>
     </main>
+    </>
   );
 };
