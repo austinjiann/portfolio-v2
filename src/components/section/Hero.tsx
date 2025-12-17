@@ -44,7 +44,7 @@ export const Hero = () => {
       position: 'relative',
       overflow: 'hidden',
       paddingBottom: 0,
-      paddingTop: '5vh', 
+      paddingTop: '4vh', 
     }}>
       {/* Styles for animations */}
       <style>
@@ -93,7 +93,9 @@ export const Hero = () => {
           background: 'rgba(255,255,255,0.06)',
           borderRadius: '32px',
           zIndex: 1,
-          backdropFilter: 'blur(5px)'
+          backdropFilter: 'blur(5px)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
+          maskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)'
         }}>
           <div style={{
             position: 'absolute',
@@ -113,7 +115,7 @@ export const Hero = () => {
           position: 'relative',
           zIndex: 10,
           width: '100%',
-          height: '70vh',
+          height: '60vh',
           marginBottom: '16px',
           background: 'linear-gradient(180deg, #2a2a2a 0%, #111 100%)',
           borderRadius: '24px',
