@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { projects } from '../data/projectsData';
 import { caseStudyComponentBySlug, caseStudyTitleBySlug, caseStudyMetadataBySlug } from '../data/caseStudies';
 import { HoverLink } from '../components/ui/HoverLink';
@@ -13,6 +13,8 @@ export const CaseStudy = () => {
   const caseStudyTitle = slug ? caseStudyTitleBySlug[slug] : undefined;
   const CaseStudyComponent = slug ? caseStudyComponentBySlug[slug] : null;
   const metadata = slug ? caseStudyMetadataBySlug[slug] : undefined;
+  const [isBackHovered, setIsBackHovered] = useState(false);
+  const [isErrorBackHovered, setIsErrorBackHovered] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -66,7 +68,19 @@ export const CaseStudy = () => {
     return (
       <div style={{ padding: '2rem' }}>
         <p>Project not found.</p>
-        <Link to="/" style={{ cursor: 'pointer' }}>Back home</Link>
+        <Link 
+          to="/" 
+          style={{ 
+            color: isErrorBackHovered ? '#fff' : '#888', 
+            textDecoration: 'none', 
+            cursor: 'pointer',
+            transition: 'color 0.2s ease'
+          }}
+          onMouseEnter={() => setIsErrorBackHovered(true)}
+          onMouseLeave={() => setIsErrorBackHovered(false)}
+        >
+          Back home
+        </Link>
       </div>
     );
   }
@@ -93,7 +107,17 @@ export const CaseStudy = () => {
       )}
       <main style={{ padding: 'clamp(24px,4vw,48px)', width: '90%', maxWidth: '750px', margin: '0 auto' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <Link to="/" style={{ color: '#888', textDecoration: 'none', cursor: 'pointer' }}>
+        <Link 
+          to="/" 
+          style={{ 
+            color: isBackHovered ? '#fff' : '#888', 
+            textDecoration: 'none', 
+            cursor: 'pointer',
+            transition: 'color 0.2s ease'
+          }}
+          onMouseEnter={() => setIsBackHovered(true)}
+          onMouseLeave={() => setIsBackHovered(false)}
+        >
           ← back to projects
         </Link>
         {metadata && (metadata.githubLink || metadata.projectLink) && (
