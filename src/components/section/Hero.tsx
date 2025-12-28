@@ -71,13 +71,19 @@ export const Hero = () => {
               font-size: 2rem !important;
             }
             .hero-card-content {
-              padding: 8vh var(--card-padding) 3vh var(--card-padding) !important;
+              padding: 6vh var(--card-padding) 2vh var(--card-padding) !important;
+              justify-content: flex-start !important;
+              gap: 3vh !important;
             }
             .hero-browser-window {
               height: 60vh !important;
             }
             .hero-secondary-text {
               text-align: right !important;
+              margin-top: 2vh !important;
+            }
+            .hero-scroll-indicator {
+              padding-top: 1vh !important;
             }
           }
         `}
